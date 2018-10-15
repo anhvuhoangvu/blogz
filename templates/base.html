@@ -1,12 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>{{title}}</title>
+        <title>Build-A-Blog</title>
     </head>
-<body>
-
-    {% block content %}
-    {% endblock %}
-
-</body>
+    <body>
+        <h1>Build-A-Blog</h1>
+        <form method="get" action="/blog">
+        <input type="submit" value="View Blog">
+        </form>
+        <form method="get" action="/new-entry">
+        <input type="submit" value="New Entry">
+        </form>
+        {% block content %}
+        {% endblock %}
+        </form>
+    </body>
 </html>
