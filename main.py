@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 # SQL database configuration: username:password@server:portnumber/databasename
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://build-a-blog:password@localhost:8889/build-a-blog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:password@localhost:8889/blogz'
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 # randomly generated secret_key
