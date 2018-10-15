@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Build-A-Blog</title>
-    </head>
-    <body>
-        <h1>Build-A-Blog</h1>
-        <form method="get" action="/blog">
-        <input type="submit" value="View Blog">
-        </form>
-        <form method="get" action="/new-entry">
-        <input type="submit" value="New Entry">
-        </form>
-        {% block content %}
-        {% endblock %}
-        </form>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="header">
+        <h1 class="title"><a href="/blog">Build a Blog</a></h1>
+        <a href="/post" class="left">New Post</a>
+        <a href="/blog?sort=oldest" class="right">Oldest</a>
+        <a href="/blog?sort=newest" class="right newest">Newest</a>
+      </nav>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
 </html>
