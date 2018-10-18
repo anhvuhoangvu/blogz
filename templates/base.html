@@ -8,10 +8,11 @@
   <body>
     <div class="container">
       <nav class="header">
-        <h1 class="title"><a href="/blog">Build a Blog</a></h1>
-        <a href="/post" class="left">New Post</a>
-        <a href="/blog?sort=oldest" class="right">Oldest</a>
-        <a href="/blog?sort=newest" class="right newest">Newest</a>
+        <h1 class="title"><a href="/">Blogz!</a></h1>
+        <a href="/blog" class="left spacing">View All Posts</a>
+        <a href="/newpost"><i class="fa fa-pencil" aria-hidden="true"></i> New Post</a>
+        <a href="/logout" class="right"><i class="fa fa-sign-out"></i> Logout</a>
+        <a href="/login" class="right spacing"><i class="fa fa-sign-in"></i> Login</a>
       </nav>
       {% block content %}
       {% endblock %}
