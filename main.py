@@ -1,19 +1,16 @@
-from flask import Flask, request, redirect, render_template, session, flash
+from flask import Flask, request, redirect, render_template, session
 from flask_sqlalchemy import SQLAlchemy
-# importing datetime for bonus in reverse ordering blog posts
 from datetime import datetime
-from sqlalchemy import desc
+from hashutils import make_pw_hash, check_pw_hash
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-
-# SQL database configuration: username:password@server:portnumber/databasename
+#  NOTE: The connection string after :// contains:
+#  user:password@server:portNumber/databaseName
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:password@localhost:8889/blogz'
-app.config['SQLALCHEMY_ECHO'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.secret_key = 'as8d7f98a!@qw546era#$#@$'
 db = SQLAlchemy(app)
-# randomly generated secret_key
-app.secret_key = 'xfd{H\xe5<\xf9\x6a2\xa0\x9fR"\xa1\xa8'
-
 
 # Created Blog class with ID, title, body, and owner_id columns.
 # Relational database established between Blog & User through a foreign key.
